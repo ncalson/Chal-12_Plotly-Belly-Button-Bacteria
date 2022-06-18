@@ -147,14 +147,18 @@ function buildCharts(sample) {
     Plotly.newPlot(); 
 
     // 1. Create the trace for the bubble chart.
-    var bubbleData = [
+    var bubbleData = [{
       x: ids,
       y: values,
       text: labels,
       type: "bubble",
       mode: "markers",
-      marker: 
-    ];
+      marker: {
+        size: values,
+        color: ids,
+        colorscale: "Earth"
+      }
+    }];
     var data = [bubbleData];
 
     // 2. Create the layout for the bubble chart.
